@@ -6,13 +6,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'build'
-      - '--cache-from'
-      - '$_REPO/$PROJECT_ID/$_PROJECT:latest'
       - '.'
-      - '-f'
-      - 'Dockerfile'
-      - '--build-arg'
-      - 'NODE_ENV=production'
       - '-t'
       - '$_REPO/$PROJECT_ID/$_PROJECT:$SHORT_SHA'
       - '-t'
